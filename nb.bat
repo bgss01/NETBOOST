@@ -196,6 +196,7 @@ set /p "prefix=Tiga angka pertama IP (Enter = 192.168.88): "
 if not defined prefix set "prefix=192.168.88"
 echo.
 echo Memindai %prefix%.1 sampai %prefix%.254, mohon tunggu...
+echo %YELLOW%Untuk berhenti: tekan Ctrl+C, lalu ketik N dan Enter.%RESET%
 echo.
 for /L %%i in (1,1,254) do @ping -n 1 -w 100 %prefix%.%%i | find "TTL="
 echo.
