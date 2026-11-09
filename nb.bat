@@ -22,16 +22,16 @@ echo               %GREEN%NETBOOST CMD BY BAGUS
 echo       Optimasi dan Diagnostik Jaringan Windows%RESET%
 echo ======================================================
 echo.
-echo  [1] Lihat status jaringan dan adapter
-echo  [2] Bersihkan DNS cache
-echo  [3] Ganti DNS ke Cloudflare (1.1.1.1 / 1.0.0.1)
-echo  [4] Kembalikan DNS ke otomatis (DHCP)
-echo  [5] Renew IP (putus koneksi sementara)
-echo  [6] Optimasi TCP Windows (autotuning normal)
-echo  [7] Reset Winsock dan TCP/IP (perlu restart)
-echo  [8] Tes koneksi internet dan latency
-echo  [9] Lihat nama adapter jaringan
-echo  [0] Keluar
+echo  %CYAN%[1]%RESET% Lihat status jaringan dan adapter
+echo  %CYAN%[2]%RESET% Bersihkan DNS cache
+echo  %CYAN%[3]%RESET% Ganti DNS ke Cloudflare (1.1.1.1 / 1.0.0.1)
+echo  %CYAN%[4]%RESET% Kembalikan DNS ke otomatis (DHCP)
+echo  %CYAN%[5]%RESET% Renew IP (putus koneksi sementara)
+echo  %CYAN%[6]%RESET% Optimasi TCP Windows (autotuning normal)
+echo  %CYAN%[7]%RESET% Reset Winsock dan TCP/IP (perlu restart)
+echo  %CYAN%[8]%RESET% Tes koneksi internet dan latency
+echo  %CYAN%[9]%RESET% Lihat nama adapter jaringan
+echo  %CYAN%[0]%RESET% Keluar
 echo.
 set "choice="
 set /p "choice=Pilih menu: "
