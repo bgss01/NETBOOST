@@ -3,6 +3,10 @@ setlocal EnableExtensions EnableDelayedExpansion
 chcp 65001 >nul
 for /f %%A in ('echo prompt $E ^| cmd') do set "ESC=%%A"
 set "GREEN=%ESC%[92m"
+set "YELLOW=%ESC%[93m"
+set "RED=%ESC%[91m"
+set "CYAN=%ESC%[96m"
+set "GRAY=%ESC%[90m"
 set "RESET=%ESC%[0m"
 title NETBOOST CMD - Network Optimizer
 
