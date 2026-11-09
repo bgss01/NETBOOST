@@ -23,7 +23,7 @@ if not "%errorlevel%"=="0" (
 cls
 echo ======================================================
 echo               %GREEN%NETBOOST CMD BY BAGUS
-echo       Optimasi dan Diagnostik Jaringan Windows%RESET%
+echo       Optimasi dan Diagnostik Jaringan SAPTA%RESET%
 echo ======================================================
 echo.
 echo  %CYAN%[1]%RESET% Lihat status jaringan dan adapter
