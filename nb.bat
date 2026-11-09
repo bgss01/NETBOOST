@@ -1,6 +1,9 @@
 @echo off
 setlocal EnableExtensions EnableDelayedExpansion
 chcp 65001 >nul
+for /f %%A in ('echo prompt $E ^| cmd') do set "ESC=%%A"
+set "GREEN=%ESC%[92m"
+set "RESET=%ESC%[0m"
 title NETBOOST CMD - Network Optimizer
 
 :: Cek hak Administrator, kalau belum maka minta naik hak otomatis
@@ -15,8 +18,8 @@ if not "%errorlevel%"=="0" (
 :MENU
 cls
 echo ======================================================
-echo               NETBOOST CMD BY BAGUS
-echo       Optimasi dan Diagnostik Jaringan Windows
+echo               %GREEN%NETBOOST CMD BY BAGUS
+echo       Optimasi dan Diagnostik Jaringan Windows%RESET%
 echo ======================================================
 echo.
 echo  [1] Lihat status jaringan dan adapter
