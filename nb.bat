@@ -31,6 +31,7 @@ echo  %CYAN%[6]%RESET% Optimasi TCP Windows (autotuning normal)
 echo  %CYAN%[7]%RESET% Reset Winsock dan TCP/IP (perlu restart)
 echo  %CYAN%[8]%RESET% Tes koneksi internet dan latency
 echo  %CYAN%[9]%RESET% Lihat nama adapter jaringan
+echo  %CYAN%[10]%RESET% Melihat status IP yang sedang aktif (Ping Sweep)
 echo  %CYAN%[0]%RESET% Keluar
 echo.
 set "choice="
@@ -44,6 +45,7 @@ if "%choice%"=="6" goto TCP
 if "%choice%"=="7" goto RESET
 if "%choice%"=="8" goto TEST
 if "%choice%"=="9" goto ADAPTER
+if "%choice%"=="10" goto SCAN
 if "%choice%"=="0" exit /b
 echo Pilihan tidak valid.
 timeout /t 2 >nul
@@ -178,5 +180,22 @@ echo === NAMA ADAPTER JARINGAN ===
 netsh interface show interface
 echo.
 echo Gunakan nama pada kolom Interface Name saat memilih DNS.
+pause
+goto MENU
+
+:SCAN
+cls
+echo %CYAN%=== SCAN PERANGKAT AKTIF ^(PING SWEEP^) ===%RESET%
+echo.
+set "prefix="
+set /p "prefix=Tiga angka pertama IP (Enter = 192.168.88): "
+if not defined prefix set "prefix=192.168.88"
+echo.
+echo Memindai %prefix%.1 sampai %prefix%.254, mohon tunggu...
+echo.
+for /L %%i in (1,1,254) do @ping -n 1 -w 100 %prefix%.%%i | find "TTL="
+echo.
+echo %GREEN%Scan selesai.%RESET%
+echo %YELLOW%Catatan: perangkat dengan firewall yang memblokir ping tidak akan muncul.%RESET%
 pause
 goto MENU
